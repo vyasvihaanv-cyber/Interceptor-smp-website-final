@@ -8,8 +8,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
-  <!-- Lucide Icons -->
-  <script src="https://unpkg.com/lucide@latest"></script>
   <!-- External Custom Stylesheet -->
   <link rel="stylesheet" href="style.css">
   <script>
@@ -44,7 +42,7 @@
   <header class="sticky top-0 z-50 backdrop-blur-md bg-mc-dark/80 border-b border-mc-border">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
       <!-- Logo -->
-      <a href="#" class="flex items-center gap-3 group">
+      <a href="#about" class="flex items-center gap-3 group">
         <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-600 to-green-400 flex items-center justify-center shadow-lg shadow-emerald-500/20 group-hover:scale-105 transition-transform">
           <i data-lucide="shield" class="w-6 h-6 text-slate-950 font-black"></i>
         </div>
@@ -68,12 +66,12 @@
       <div class="hidden sm:flex items-center gap-3">
         <button onclick="copyIp()" class="flex items-center gap-2 bg-mc-card border border-emerald-500/40 hover:border-emerald-400 text-emerald-300 px-4 py-2 rounded-xl text-sm font-mono font-bold transition-all hover:bg-emerald-500/10 active:scale-95 shadow-sm">
           <i data-lucide="copy" class="w-4 h-4 text-emerald-400"></i>
-          <span>play.intercrptor.dpdns.org</span>
+          <span>play.interceptor.dpdns.org</span>
         </button>
       </div>
 
       <!-- Mobile Menu Toggle -->
-      <button id="menu-btn" class="md:hidden text-slate-400 hover:text-white p-2" aria-label="Toggle Menu">
+      <button id="menu-btn" class="md:hidden text-slate-400 hover:text-white p-2" aria-label="Toggle Menu" aria-expanded="false" aria-controls="mobile-menu">
         <i data-lucide="menu" class="w-6 h-6"></i>
       </button>
     </div>
@@ -85,13 +83,14 @@
       <a href="#join" class="block text-slate-300 hover:text-emerald-400 text-sm font-medium py-1">How to Join</a>
       <a href="#status" class="block text-slate-300 hover:text-emerald-400 text-sm font-medium py-1">Live Status</a>
       <button onclick="copyIp()" class="w-full mt-2 flex items-center justify-center gap-2 bg-emerald-500 text-slate-950 font-bold py-2.5 rounded-lg text-sm">
-        <i data-lucide="copy" class="w-4 h-4"></i> Copy IP: play.intercrptor.dpdns.org
+        <i data-lucide="copy" class="w-4 h-4"></i> Copy IP: play.interceptor.dpdns.org
       </button>
     </div>
   </header>
 
   <main class="flex-grow">
-    <section class="relative pt-20 pb-28 overflow-hidden text-center">
+    <!-- Hero / Overview Section with id="about" -->
+    <section id="about" class="relative pt-20 pb-28 overflow-hidden text-center">
       <!-- Glow ambient background -->
       <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-emerald-500/10 blur-[130px] rounded-full pointer-events-none"></div>
 
@@ -118,7 +117,7 @@
           <div class="flex flex-col sm:flex-row items-center gap-3">
             <div class="flex-1 w-full bg-slate-950/70 border border-slate-800 rounded-xl px-4 py-3 text-left">
               <span class="text-[11px] font-mono text-slate-500 uppercase tracking-widest block">Server Address</span>
-              <span class="font-mono text-base font-bold text-white tracking-wider select-all" id="server-ip-text">play.intercrptor.dpdns.org</span>
+              <span class="font-mono text-base font-bold text-white tracking-wider select-all" id="server-ip-text">play.interceptor.dpdns.org</span>
             </div>
             <button onclick="copyIp()" id="hero-copy-btn" class="w-full sm:w-auto px-6 py-3.5 bg-gradient-to-r from-emerald-500 to-green-500 hover:from-emerald-400 hover:to-green-400 text-slate-950 font-bold rounded-xl transition-all shadow-lg shadow-emerald-500/20 active:scale-95 flex items-center justify-center gap-2 whitespace-nowrap">
               <i data-lucide="copy" class="w-4 h-4"></i>
@@ -133,6 +132,7 @@
       </div>
     </section>
 
+    <!-- Network Status Section -->
     <section id="status" class="py-12 bg-slate-950/60 border-y border-mc-border">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="bg-mc-card border border-mc-border rounded-2xl p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6">
@@ -148,7 +148,7 @@
                   Active
                 </span>
               </div>
-              <p class="text-sm text-slate-400 mt-1">Ready for incoming connections at <span class="font-mono text-emerald-300">play.intercrptor.dpdns.org</span></p>
+              <p class="text-sm text-slate-400 mt-1">Ready for incoming connections at <span class="font-mono text-emerald-300">play.interceptor.dpdns.org</span></p>
             </div>
           </div>
 
@@ -170,6 +170,7 @@
       </div>
     </section>
 
+    <!-- How to Join Section -->
     <section id="join" class="py-20 bg-slate-950/70 border-t border-mc-border">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center max-w-2xl mx-auto mb-16">
@@ -203,8 +204,8 @@
                 <div class="w-full">
                   <span>Enter Server Address:</span>
                   <div class="mt-2 flex items-center justify-between bg-slate-950 p-2.5 rounded-lg border border-slate-800 font-mono text-xs">
-                    <span class="text-emerald-400">play.intercrptor.dpdns.org</span>
-                    <button onclick="copyIp()" class="text-slate-400 hover:text-white"><i data-lucide="copy" class="w-4 h-4"></i></button>
+                    <span class="text-emerald-400">play.interceptor.dpdns.org</span>
+                    <button onclick="copyIp()" class="text-slate-400 hover:text-white" aria-label="Copy server address"><i data-lucide="copy" class="w-4 h-4"></i></button>
                   </div>
                 </div>
               </li>
@@ -228,7 +229,7 @@
               </li>
               <li class="flex items-start gap-3">
                 <span class="w-6 h-6 rounded-full bg-slate-800 text-slate-400 flex items-center justify-center text-xs shrink-0 mt-0.5">3</span>
-                <span>Enter Address: <code class="text-cyan-400 font-mono">play.intercrptor.dpdns.org</code></span>
+                <span>Enter Address: <code class="text-cyan-400 font-mono">play.interceptor.dpdns.org</code></span>
               </li>
               <li class="flex items-start gap-3">
                 <span class="w-6 h-6 rounded-full bg-slate-800 text-slate-400 flex items-center justify-center text-xs shrink-0 mt-0.5">4</span>
@@ -240,6 +241,7 @@
       </div>
     </section>
 
+    <!-- Rules Section -->
     <section id="rules" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center max-w-2xl mx-auto mb-16">
         <span class="text-xs uppercase tracking-widest text-emerald-400 font-bold font-mono">Community Standards</span>
@@ -296,7 +298,7 @@
       </div>
 
       <div class="flex items-center gap-4 text-xs font-mono text-slate-400">
-        <span class="hover:text-emerald-400 cursor-pointer" onclick="copyIp()">play.intercrptor.dpdns.org</span>
+        <span class="hover:text-emerald-400 cursor-pointer" onclick="copyIp()">play.interceptor.dpdns.org</span>
         <span>•</span>
         <a href="#rules" class="hover:text-white transition-colors">Guidelines</a>
       </div>
@@ -309,6 +311,8 @@
     <span>IP Copied to clipboard!</span>
   </div>
 
+  <!-- Lucide Icons loaded before script.js for faster, non-blocking page render -->
+  <script src="https://unpkg.com/lucide@latest"></script>
   <!-- External Interactive Script -->
   <script src="script.js"></script>
 </body>
