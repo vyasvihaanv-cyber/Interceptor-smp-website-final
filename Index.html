@@ -1,0 +1,317 @@
+```html
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interceptor MC | Official Server Website</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- External Custom Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            heading: ['Cinzel', 'serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            mc: {
+              green: '#22c55e',
+              emerald: '#10b981',
+              dark: '#0B0F19',
+              card: '#111827',
+              border: '#1F2937',
+              accent: '#38BDF8',
+            }
+          },
+          backgroundImage: {
+            'grid-pattern': "radial-gradient(circle at 1px 1px, rgba(255,255,255,0.05) 1px, transparent 0)",
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-mc-dark text-slate-200 font-sans selection:bg-emerald-500 selection:text-black min-h-screen flex flex-col bg-grid-pattern bg-grid">
+
+  <header class="sticky top-0 z-50 backdrop-blur-md bg-mc-dark/80 border-b border-mc-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-600 to-green-400 flex items-center justify-center shadow-lg shadow-emerald-500/20 group-hover:scale-105 transition-transform">
+          <i data-lucide="shield" class="w-6 h-6 text-slate-950 font-black"></i>
+        </div>
+        <div>
+          <span class="font-heading font-black text-xl tracking-wider text-white flex items-center gap-1.5">
+            INTERCEPTOR<span class="text-emerald-400">MC</span>
+          </span>
+          <span class="text-[10px] uppercase tracking-widest text-slate-400 block font-mono">SMP & Adventure</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-semibold">
+        <a href="#about" class="text-slate-300 hover:text-emerald-400 transition-colors">Overview</a>
+        <a href="#rules" class="text-slate-300 hover:text-emerald-400 transition-colors">Rules</a>
+        <a href="#join" class="text-slate-300 hover:text-emerald-400 transition-colors">How to Join</a>
+        <a href="#status" class="text-slate-300 hover:text-emerald-400 transition-colors">Live Status</a>
+      </nav>
+
+      <!-- Action Button -->
+      <div class="hidden sm:flex items-center gap-3">
+        <button onclick="copyIp()" class="flex items-center gap-2 bg-mc-card border border-emerald-500/40 hover:border-emerald-400 text-emerald-300 px-4 py-2 rounded-xl text-sm font-mono font-bold transition-all hover:bg-emerald-500/10 active:scale-95 shadow-sm">
+          <i data-lucide="copy" class="w-4 h-4 text-emerald-400"></i>
+          <span>play.intercrptor.dpdns.org</span>
+        </button>
+      </div>
+
+      <!-- Mobile Menu Toggle -->
+      <button id="menu-btn" class="md:hidden text-slate-400 hover:text-white p-2" aria-label="Toggle Menu">
+        <i data-lucide="menu" class="w-6 h-6"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Nav Panel -->
+    <div id="mobile-menu" class="hidden md:hidden border-b border-mc-border bg-mc-card/95 px-6 py-4 space-y-3">
+      <a href="#about" class="block text-slate-300 hover:text-emerald-400 text-sm font-medium py-1">Overview</a>
+      <a href="#rules" class="block text-slate-300 hover:text-emerald-400 text-sm font-medium py-1">Rules</a>
+      <a href="#join" class="block text-slate-300 hover:text-emerald-400 text-sm font-medium py-1">How to Join</a>
+      <a href="#status" class="block text-slate-300 hover:text-emerald-400 text-sm font-medium py-1">Live Status</a>
+      <button onclick="copyIp()" class="w-full mt-2 flex items-center justify-center gap-2 bg-emerald-500 text-slate-950 font-bold py-2.5 rounded-lg text-sm">
+        <i data-lucide="copy" class="w-4 h-4"></i> Copy IP: play.intercrptor.dpdns.org
+      </button>
+    </div>
+  </header>
+
+  <main class="flex-grow">
+    <section class="relative pt-20 pb-28 overflow-hidden text-center">
+      <!-- Glow ambient background -->
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-emerald-500/10 blur-[130px] rounded-full pointer-events-none"></div>
+
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
+        <!-- Badge -->
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold tracking-wide uppercase mb-6">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+          <span>Online & Ready for Adventure</span>
+        </div>
+
+        <!-- Main Headline -->
+        <h1 class="text-4xl sm:text-6xl md:text-7xl font-heading font-black text-white tracking-tight leading-none mb-6">
+          CONQUER THE REALM ON <br>
+          <span class="bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400 bg-clip-text text-transparent text-glow">INTERCEPTOR</span>
+        </h1>
+
+        <!-- Subtitle -->
+        <p class="text-base sm:text-lg md:text-xl text-slate-400 max-w-2xl mx-auto font-normal leading-relaxed mb-10">
+          A thrilling multiplayer Minecraft community featuring enhanced survival, community events, player trading, and pure exploration without disruptive pay-to-win mechanics.
+        </p>
+
+        <!-- Direct Join Card -->
+        <div class="max-w-md mx-auto bg-mc-card/90 backdrop-blur border border-slate-800 rounded-2xl p-4 shadow-2xl box-glow">
+          <div class="flex flex-col sm:flex-row items-center gap-3">
+            <div class="flex-1 w-full bg-slate-950/70 border border-slate-800 rounded-xl px-4 py-3 text-left">
+              <span class="text-[11px] font-mono text-slate-500 uppercase tracking-widest block">Server Address</span>
+              <span class="font-mono text-base font-bold text-white tracking-wider select-all" id="server-ip-text">play.intercrptor.dpdns.org</span>
+            </div>
+            <button onclick="copyIp()" id="hero-copy-btn" class="w-full sm:w-auto px-6 py-3.5 bg-gradient-to-r from-emerald-500 to-green-500 hover:from-emerald-400 hover:to-green-400 text-slate-950 font-bold rounded-xl transition-all shadow-lg shadow-emerald-500/20 active:scale-95 flex items-center justify-center gap-2 whitespace-nowrap">
+              <i data-lucide="copy" class="w-4 h-4"></i>
+              <span>Copy IP</span>
+            </button>
+          </div>
+          <div class="mt-3 flex items-center justify-between text-xs text-slate-400 px-1 font-mono">
+            <span class="flex items-center gap-1.5"><i data-lucide="layers" class="w-3.5 h-3.5 text-emerald-400"></i> Java & Bedrock</span>
+            <span class="flex items-center gap-1.5"><i data-lucide="zap" class="w-3.5 h-3.5 text-emerald-400"></i> Version 1.20+</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="status" class="py-12 bg-slate-950/60 border-y border-mc-border">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-mc-card border border-mc-border rounded-2xl p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div class="flex items-center gap-5 w-full md:w-auto">
+            <div class="w-14 h-14 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center shrink-0">
+              <i data-lucide="shield-check" class="w-7 h-7 text-emerald-400"></i>
+            </div>
+            <div>
+              <div class="flex items-center gap-2.5">
+                <h3 class="text-lg font-bold text-white">Server Network Status</h3>
+                <span class="text-xs px-2.5 py-0.5 rounded-full font-bold uppercase tracking-wider bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 flex items-center gap-1.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
+                  Active
+                </span>
+              </div>
+              <p class="text-sm text-slate-400 mt-1">Ready for incoming connections at <span class="font-mono text-emerald-300">play.intercrptor.dpdns.org</span></p>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 w-full md:w-auto">
+            <div class="bg-slate-950/60 border border-slate-800 rounded-xl px-4 py-3 text-center">
+              <span class="text-xs font-medium text-slate-400 block mb-0.5">Network Uptime</span>
+              <span class="text-lg font-mono font-bold text-emerald-400">24/7 Online</span>
+            </div>
+            <div class="bg-slate-950/60 border border-slate-800 rounded-xl px-4 py-3 text-center">
+              <span class="text-xs font-medium text-slate-400 block mb-0.5">Default Port</span>
+              <span class="text-lg font-mono font-bold text-cyan-400">25565 / 19132</span>
+            </div>
+            <div class="bg-slate-950/60 border border-slate-800 rounded-xl px-4 py-3 text-center col-span-2 sm:col-span-1">
+              <span class="text-xs font-medium text-slate-400 block mb-0.5">Compatible Editions</span>
+              <span class="text-lg font-mono font-bold text-white">Java & Bedrock</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="join" class="py-20 bg-slate-950/70 border-t border-mc-border">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+          <span class="text-xs uppercase tracking-widest text-emerald-400 font-bold font-mono">Simple Steps</span>
+          <h2 class="text-3xl sm:text-4xl font-heading font-black text-white mt-2 mb-4">How To Connect</h2>
+          <p class="text-slate-400 text-sm sm:text-base">Join Interceptor in under two minutes from Java Edition or Bedrock Edition.</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <!-- Java Guide -->
+          <div class="bg-mc-card border border-mc-border rounded-2xl p-8 relative overflow-hidden">
+            <div class="flex items-center gap-3 mb-6">
+              <span class="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-mono font-bold text-sm">J</span>
+              <h3 class="text-xl font-bold text-white">Minecraft Java Edition</h3>
+            </div>
+            <ol class="space-y-4 text-sm text-slate-300">
+              <li class="flex items-start gap-3">
+                <span class="w-6 h-6 rounded-full bg-slate-800 text-slate-400 flex items-center justify-center text-xs shrink-0 mt-0.5">1</span>
+                <span>Launch Minecraft Java and click on <strong>Multiplayer</strong>.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="w-6 h-6 rounded-full bg-slate-800 text-slate-400 flex items-center justify-center text-xs shrink-0 mt-0.5">2</span>
+                <span>Click on <strong>Add Server</strong> at the bottom.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="w-6 h-6 rounded-full bg-slate-800 text-slate-400 flex items-center justify-center text-xs shrink-0 mt-0.5">3</span>
+                <span>Set Server Name to <code class="text-emerald-400 font-mono">Interceptor MC</code>.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="w-6 h-6 rounded-full bg-slate-800 text-slate-400 flex items-center justify-center text-xs shrink-0 mt-0.5">4</span>
+                <div class="w-full">
+                  <span>Enter Server Address:</span>
+                  <div class="mt-2 flex items-center justify-between bg-slate-950 p-2.5 rounded-lg border border-slate-800 font-mono text-xs">
+                    <span class="text-emerald-400">play.intercrptor.dpdns.org</span>
+                    <button onclick="copyIp()" class="text-slate-400 hover:text-white"><i data-lucide="copy" class="w-4 h-4"></i></button>
+                  </div>
+                </div>
+              </li>
+            </ol>
+          </div>
+
+          <!-- Bedrock Guide -->
+          <div class="bg-mc-card border border-mc-border rounded-2xl p-8 relative overflow-hidden">
+            <div class="flex items-center gap-3 mb-6">
+              <span class="w-8 h-8 rounded-lg bg-cyan-500/20 text-cyan-400 flex items-center justify-center font-mono font-bold text-sm">B</span>
+              <h3 class="text-xl font-bold text-white">Bedrock (Windows, iOS, Android, Consoles)</h3>
+            </div>
+            <ol class="space-y-4 text-sm text-slate-300">
+              <li class="flex items-start gap-3">
+                <span class="w-6 h-6 rounded-full bg-slate-800 text-slate-400 flex items-center justify-center text-xs shrink-0 mt-0.5">1</span>
+                <span>Launch Minecraft and click <strong>Play</strong> &rarr; <strong>Servers Tab</strong>.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="w-6 h-6 rounded-full bg-slate-800 text-slate-400 flex items-center justify-center text-xs shrink-0 mt-0.5">2</span>
+                <span>Scroll down and select <strong>Add Server</strong>.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="w-6 h-6 rounded-full bg-slate-800 text-slate-400 flex items-center justify-center text-xs shrink-0 mt-0.5">3</span>
+                <span>Enter Address: <code class="text-cyan-400 font-mono">play.intercrptor.dpdns.org</code></span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="w-6 h-6 rounded-full bg-slate-800 text-slate-400 flex items-center justify-center text-xs shrink-0 mt-0.5">4</span>
+                <span>Default Port: <code class="text-cyan-400 font-mono">19132</code> (or default standard). Click <strong>Save & Join</strong>!</span>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="rules" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="text-xs uppercase tracking-widest text-emerald-400 font-bold font-mono">Community Standards</span>
+        <h2 class="text-3xl sm:text-4xl font-heading font-black text-white mt-2 mb-4">Server Rules</h2>
+        <p class="text-slate-400 text-sm sm:text-base">We enforce clear rules to keep gameplay fun, fair, and welcoming for everybody.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
+        <div class="bg-mc-card border border-mc-border p-5 rounded-xl flex gap-4">
+          <div class="text-emerald-400 shrink-0 mt-1"><i data-lucide="ban" class="w-5 h-5"></i></div>
+          <div>
+            <h4 class="font-bold text-white text-base">1. No Hacking or Unfair Clients</h4>
+            <p class="text-slate-400 text-xs sm:text-sm mt-1">X-ray texture packs, fly hacks, auto-aim, or packet exploits result in a permanent ban.</p>
+          </div>
+        </div>
+
+        <div class="bg-mc-card border border-mc-border p-5 rounded-xl flex gap-4">
+          <div class="text-emerald-400 shrink-0 mt-1"><i data-lucide="heart-handshake" class="w-5 h-5"></i></div>
+          <div>
+            <h4 class="font-bold text-white text-base">2. Respect Other Players</h4>
+            <p class="text-slate-400 text-xs sm:text-sm mt-1">No harassment, toxicity, discrimination, or hate speech in public chat or signs.</p>
+          </div>
+        </div>
+
+        <div class="bg-mc-card border border-mc-border p-5 rounded-xl flex gap-4">
+          <div class="text-emerald-400 shrink-0 mt-1"><i data-lucide="hammer" class="w-5 h-5"></i></div>
+          <div>
+            <h4 class="font-bold text-white text-base">3. No Griefing or Loot Theft</h4>
+            <p class="text-slate-400 text-xs sm:text-sm mt-1">Do not destroy or alter structures built by others or steal from unlocked storage areas.</p>
+          </div>
+        </div>
+
+        <div class="bg-mc-card border border-mc-border p-5 rounded-xl flex gap-4">
+          <div class="text-emerald-400 shrink-0 mt-1"><i data-lucide="cpu" class="w-5 h-5"></i></div>
+          <div>
+            <h4 class="font-bold text-white text-base">4. Avoid Lag Machines</h4>
+            <p class="text-slate-400 text-xs sm:text-sm mt-1">Keep redstone clocks controllable with levers. Massively stacked entity farms will be cleared.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="bg-slate-950 border-t border-mc-border py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded-lg bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center">
+          <i data-lucide="shield" class="w-4 h-4 text-emerald-400"></i>
+        </div>
+        <p class="text-xs text-slate-400 font-mono">
+          &copy; 2026 Interceptor MC. Not an official Minecraft service. Not approved by or associated with Mojang or Microsoft.
+        </p>
+      </div>
+
+      <div class="flex items-center gap-4 text-xs font-mono text-slate-400">
+        <span class="hover:text-emerald-400 cursor-pointer" onclick="copyIp()">play.intercrptor.dpdns.org</span>
+        <span>•</span>
+        <a href="#rules" class="hover:text-white transition-colors">Guidelines</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification Box -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none bg-emerald-500 text-slate-950 px-5 py-3 rounded-xl shadow-2xl font-bold font-mono text-sm flex items-center gap-3">
+    <i data-lucide="check-circle" class="w-5 h-5 text-slate-950"></i>
+    <span>IP Copied to clipboard!</span>
+  </div>
+
+  <!-- External Interactive Script -->
+  <script src="script.js"></script>
+</body>
+</html>
+```
