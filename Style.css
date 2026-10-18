@@ -1,0 +1,25 @@
+/* STREAMING_CHUNK:Configuring custom styles and utility classes... /
+/ Custom background pattern & glow effects */
+.bg-grid {
+background-size: 32px 32px;
+}
+​.text-glow {
+text-shadow: 0 0 25px rgba(34, 197, 94, 0.45);
+}
+​.box-glow {
+box-shadow: 0 0 30px -5px rgba(34, 197, 94, 0.2);
+}
+​/* Custom scrollbar */
+::-webkit-scrollbar {
+width: 8px;
+}
+​::-webkit-scrollbar-track {
+background: #0B0F19;
+}
+​::-webkit-scrollbar-thumb {
+background: #1F2937;
+border-radius: 4px;
+}
+​::-webkit-scrollbar-thumb:hover {
+background: #374151;
+}
