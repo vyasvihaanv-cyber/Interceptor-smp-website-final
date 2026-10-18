@@ -1,4 +1,3 @@
-```javascript
 // Initialize Lucide Icons
 lucide.createIcons();
 
@@ -41,4 +40,3 @@ function copyIp() {
     }, 2500);
   }
 }
-```
